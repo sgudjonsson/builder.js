@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="builder/css/sgudjonsson.builder.css" rel="stylesheet" type="text/css" />
+		<link href="builder/css/sgudjonsson.builder.toolbar.css" rel="stylesheet" type="text/css" />
+		<title>Builder.js</title>
+	</head>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<form class="form-horizontal">
+					<fieldset id="sgudjonsson-builder" class="row">
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+    <script id="sgudjonsson-template-field-text" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="text" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label" for="field_${id}">Text ${id}</label>
+            <div class="controls">
+            	<input id="field_${id}" type="text" class="input-xlarge" placeholder="Type something ..." />
+            	<p class="help-block">Input help text here for fun.</p>
+        	</div>
+        </div>
+    </script>
+
+    <script id="sgudjonsson-template-field-textarea" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="textarea" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label" for="field_${id}">Textarea ${id}</label>
+            <div class="controls">
+            	<textarea id="field_${id}" class="input-xlarge" rows="3" placeholder="Type something ..."></textarea>
+            	<p class="help-block">Input help text here for fun.</p>
+        	</div>
+        </div>
+    </script>
+
+    <script id="sgudjonsson-template-field-select" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="select" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label" for="field_${id}">Text ${id}</label>
+            <div class="controls">
+            	<select id="field_${id}">
+            		<option value="1">Value 1</option>
+            		<option value="2">Value 2</option>
+            		<option value="3">Value 3</option>
+            	</select>
+            	<p class="help-block">Input help text here for fun.</p>
+        	</div>
+        </div>
+    </script>
+
+    <script id="sgudjonsson-template-field-email" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="email" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label" for="field_${id}">Email address ${id}</label>
+            <div class="controls">
+            	<div class="input-prepend">
+            		<span class="add-on">@</span>
+            		<input id="field_${id}" type="email" class="input-xlarge" />
+            	</div>
+            	<p class="help-block">Input help text here for fun.</p>
+        	</div>
+        </div>
+    </script>
+
+    <script id="sgudjonsson-template-field-checkboxes" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="checkboxes" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label">Checkboxes ${id}</label>
+            <div class="controls">
+            	<label class="checkbox"><input name="field_${id}" type="checkbox" value="1" />Some text for this value</label>
+            	<label class="checkbox"><input name="field_${id}" type="checkbox" value="2" />Some text for this value</label>
+            	<p class="help-block">Input help text here for fun.</p>
+        	</div>
+        </div>       	
+    </script>
+
+    <script id="sgudjonsson-template-field-radiobuttons" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="radiobuttons" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label">Radiobuttons ${id}</label>
+            <div class="controls">
+            	<label class="radio"><input name="field_${id}" type="radio" value="1" />Some text for this value</label>
+            	<label class="radio"><input name="field_${id}" type="radio" value="2" />Some text for this value</label>
+            	<p class="help-block">Input help text here for fun.</p>
+        	</div>
+        </div>       	
+    </script>
+
+    <script id="sgudjonsson-template-field-file" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="file" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label" for="field_${id}">Text ${id}</label>
+            <div class="controls">
+            	<input id="field_${id}" type="file" />
+            	<p class="help-block">Input help text here for fun.</p>
+        	</div>
+        </div>
+    </script>
+
+    <script id="sgudjonsson-template-field-textblock" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="textblock" data-field-id="${id}">
+        	<div class="textblock">
+            	<h3>Some heading here</h3>
+            	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+    </script>
+
+    <script id="sgudjonsson-template-field-datetime" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="datetime" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label" for="field_${id}">Date &amp; time ${id}</label>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                    <input id="field_${id}" type="datetime" class="input-xlarge" />
+                </div>
+                <p class="help-block">Input help text here for fun.</p>
+            </div>
+        </div>
+    </script>
+
+    <script id="sgudjonsson-template-field-table" type="text/html">
+        <div id="field-markup-container-${id}" class="sgudjonsson-builder-field control-group span12" data-field-type="table" data-field-id="${id}">
+            <label class="sgudjonsson-builder-field-label control-label">Foobar</label>
+            <div class="textblock">
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Language</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><input type="text" /></td>
+                        <td><input type="text" /></td>
+                        <td>
+                            <select>
+                                <option value="css">CSS</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="html">HTML</option>
+                            </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </script>
+
+    <script id="template-toolbar" type="text/html">
+        <div id="sgudjonsson-builder-toolbar" class="control-group-toolbar">
+            <div class="btn-group">
+                <a class="btn action-smaller" href="#"><i class="icon-minus"></i></a>
+                <a class="btn action-wider" href="#"><i class="icon-plus"></i></a>
+                <a class="btn action-smallest" href="#"><i class="icon-resize-small"></i></a>
+                <a class="btn action-widest" href="#"><i class="icon-resize-full"></i></a>
+            </div>
+        </div>
+    </script>
+
+	<script src="builder/js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
+	<script src="builder/js/lib/jquery-ui-1.8.11.min.js" type="text/javascript"></script>
+	<script src="builder/js/lib/jquery.tmpl.min.js" type="text/javascript"></script>
+	<script src="builder/js/lib/jquery.gethiddendimensions.js" type="text/javascript"></script>
+	<script src="builder/js/sgudjonsson.builder.js" type="text/javascript"></script>
+	<script src="builder/js/sgudjonsson.builder.toolbar.js" type="text/javascript"></script>
+</html>
